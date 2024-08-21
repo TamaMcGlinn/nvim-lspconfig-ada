@@ -6,8 +6,6 @@ See the [discussion here](https://github.com/neovim/nvim-lspconfig/pull/1693) ab
 
 Once installed, your `:LSPInfo` will show what GPR project is being used, and also an error if none is found.
 
-You might also want to install [nvim-lsp-gpr-selector](https://github.com/TamaMcGlinn/nvim-lsp-gpr-selector)
-to be able to select (and fuzzy search) gpr projects to use.
 
 # Installation
 
@@ -29,4 +27,27 @@ In your init.lua, add the following snippet:
 require("lazy").setup({
     { "TamaMcGlinn/nvim-lspconfig-ada" },
 })
+```
+
+# Configuration
+
+We recommend you also install [nvim-lsp-gpr-selector](https://github.com/TamaMcGlinn/nvim-lsp-gpr-selector)
+to be able to select (and fuzzy search) gpr projects to use. In that case, all you need to enable the language
+server is this in your init.lua:
+
+```lua
+require'lspconfig'.als.setup{}
+```
+
+An alternative way of setting the gpr project and environment is to pass a "settings" object to `als.setup{}`:
+
+```lua
+require('lspconfig').als.setup{
+    settings = {
+      ada = {
+        projectFile = "project.gpr";
+        scenarioVariables = { ... };
+      }
+    }
+}
 ```

@@ -6,6 +6,13 @@ See the [discussion here](https://github.com/neovim/nvim-lspconfig/pull/1693) ab
 
 Once installed, your `:LSPInfo` will show what GPR project is being used, and also an error if none is found.
 
+## Note:
+
+You need nvim-lspconfig >= 0.2 (which is not yet released).
+In the mean time, switch from [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/)
+to [TamaMcGlinn/nvim-lspconfig](https://github.com/TamaMcGlinn/nvim-lspconfig/). Otherwise,
+autocomplete and find-references will not work, and, depending on which version of nvim-lspconfig you have,
+you may get an error message about als being deprecated.
 
 # Installation
 
